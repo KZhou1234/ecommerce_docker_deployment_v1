@@ -1,7 +1,7 @@
 ## System diagram
 <div>
   
-  ![WL6 drawio](https://github.com/user-attachments/assets/2dc3f081-065f-446d-8985-8872fae47671)
+![image](https://github.com/user-attachments/assets/ce222c1d-3061-4cd8-b6b4-161b67f0fc8e)
 
 </div> 
 ## Instances
@@ -13,9 +13,14 @@
 
 </div>  
 
-* Bastion Host: It is a gateway allowing secure access the instances (frontend and backend) in private subnets.  
+* Bastion Host: It is a gateway allowing secure access from administrators to the instances (frontend and backend) in private subnets.  
   1.  Security Group: Port 22 for SSH
   2.  eip (optional)
+* App Server
+  1. The load balancer will forward the HTTP traffic to the web tier. In this step, the load balancer facing the public internet will listen on port 80 and forward traffic to port 3000 on app server. To ensure the security, port 3000 will only open to load balancer security group.
+ 
+  ## TROUBLE SHOOTING
+  * terraform configuration: 
  
 ## Database  
 * One database reuqired for the data consistency, high effciency.

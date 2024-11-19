@@ -18,9 +18,15 @@
   2.  eip (optional)
 * App Server
   1. The load balancer will forward the HTTP traffic to the web tier. In this step, the load balancer facing the public internet will listen on port 80 and forward traffic to port 3000 on app server. To ensure the security, port 3000 will only open to load balancer security group.
- 
+  2. Configure the setting.py in backend server, modify the username and password for the database.
+  3. <div>
+    <img width="975" alt="image" src="https://github.com/user-attachments/assets/4bae5365-b46b-45d0-9284-0503eb2898e0">
+
+  </div>  
+  
   ## TROUBLE SHOOTING
-  * terraform configuration: 
+  * terraform configuration:
+  * 
  
 ## Database  
 * One database reuqired for the data consistency, high effciency.
